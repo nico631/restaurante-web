@@ -1,0 +1,204 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* --- Estilos Generales (Mobile First) --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fafaf9;
+}
+
+/* --- Encabezado y Navegación (Flexbox) --- */
+.header {
+    background-color: #1c1917; /* Tono oscuro elegante */
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #f97316; /* Toque naranja fuego */
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #1c1917;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.nav-menu.active {
+    display: flex;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #f97316;
+}
+
+/* --- Secciones Principales --- */
+section {
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    text-align: center;
+    background: linear-gradient(135deg, #ea580c, #c2410c); /* Tonos cálidos/fuego */
+    color: white;
+    border-radius: 8px;
+    max-width: 1200px;
+    margin: 1.5rem auto;
+    padding: 4rem 2rem;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #c2410c;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #fed7aa;
+}
+
+.about, .projects {
+    text-align: center;
+}
+
+.about h3, .projects h3, .footer h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #1c1917;
+}
+
+/* --- Sección Menú (CSS Grid) --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    border-top: 4px solid #f97316;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h4 {
+    margin-bottom: 0.5rem;
+    color: #c2410c;
+}
+
+/* --- Pie de Página --- */
+.footer {
+    background-color: #1c1917;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+    color: #d6d3d1;
+}
+
+.copy {
+    font-size: 0.9rem;
+    color: #78716c;
+    margin-top: 1rem;
+}
+
+/* --- Media Queries para Responsividad --- */
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background: transparent;
+        gap: 2rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+}
